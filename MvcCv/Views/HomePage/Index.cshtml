@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid p-0">
+    <!-- About-->
+    <section class="resume-section" id="about">
+        @Html.Action("AboutPage")
+    </section>
+    <hr class="m-0" />
+    <!-- Experience-->
+    <section class="resume-section" id="experience">
+        @Html.Action("ExperiencePage")
+    </section>
+    <hr class="m-0" />
+    <!-- Education-->
+    <section class="resume-section" id="education">
+        @Html.Action("EducationPage")
+    </section>
+    <hr class="m-0" />
+    <!-- Skills-->
+    <section class="resume-section" id="skills">
+        @Html.Action("SkillPage")
+    </section>
+    <hr class="m-0" />
+    <!-- Interests-->
+    <section class="resume-section" id="interests">
+        @Html.Action("InterestPage")
+    </section>
+    <hr class="m-0" />
+    <!-- Awards-->
+    <section class="resume-section" id="awards">
+        @Html.Action("CertificationPage")
+    </section>
+    <hr class="m-0" />
+    <!--Contact-->
+    <section class="resume-section" id="contact">
+        <div class="resume-section-content">
+            <h2 class="mb-5">İletişim</h2>
+            <b>İletişim için lütfen <a href="/Login/Login">giriş</a> yapın!</b>
+            <br />
+            <b>Hesabınız yoksa <a href="/Login/Register">kayıt</a> olun!</b>
+
+        </div>
+    </section>
+</div>
+

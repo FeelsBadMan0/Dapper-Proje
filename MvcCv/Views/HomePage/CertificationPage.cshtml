@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete
+@model List<Certification>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Sertifikalar</h2>
+    <ul class="fa-ul mb-0">
+        @foreach (var crt in Model)
+        {
+            <li>
+                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                @crt.Description
+            </li>
+        }
+
+
+    </ul>
+</div>

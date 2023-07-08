@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_VisitorLayout.cshtml";
+}
+
+<h2>Mesaj Gönder</h2>
+
+@using (Html.BeginForm("Contact", "Visitor", FormMethod.Post))
+{
+
+
+    @Html.Label("Ad Soayd")
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.NameSurname, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Subject, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mesaj")
+    @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Message, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Gönder</button>
+}
+
+

@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kişi Ekle</h2>
+
+@using (Html.BeginForm("Add", "About", FormMethod.Post))
+{
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Surname, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Adres")
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Address, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PhoneNumber, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Fotoğraf")
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Image, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+

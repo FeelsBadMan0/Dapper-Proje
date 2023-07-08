@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.Interest
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Hobi Ekle</h2>
+
+@using (Html.BeginForm("Add", "Interest", FormMethod.Post))
+{
+    @Html.Label("Hobi")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+
+
+

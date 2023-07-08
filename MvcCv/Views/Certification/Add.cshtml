@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Certification
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Sertifika Ekle</h2>
+
+@using (Html.BeginForm("Add", "Certification", FormMethod.Post))
+{
+    @Html.Label("Sertifika")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+

@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Visitor
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Güncelle</h2>
+
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+{
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" ,@readonly="true"})
+    @Html.ValidationMessageFor(x => x.ID, null, new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Username, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Nail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Rol")
+    @Html.DropDownListFor(x => x.Roles, ViewBag.Roles as SelectList, "Rol Seçin", new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Roles, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}
+
+

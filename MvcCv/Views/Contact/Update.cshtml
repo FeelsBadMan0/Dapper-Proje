@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Güncelle</h2>
+
+@using (Html.BeginForm("Update", "Contact", FormMethod.Post))
+{
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", disabled = "true" })
+    @Html.ValidationMessageFor(x => x.ID, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Ad Soayd")
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.NameSurname, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Subject, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mesaj")
+    @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Message, null, new { @class = "text-danger" })
+    <br />
+    
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}
+

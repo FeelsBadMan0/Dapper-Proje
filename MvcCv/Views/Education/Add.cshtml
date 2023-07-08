@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Education
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Eğitim Ekle</h2>
+
+@using (Html.BeginForm("Add", "Education", FormMethod.Post))
+{
+    @Html.Label("Okul")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Fakülte")
+    @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubTitle, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Bölüm")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("GNOT")
+    @Html.TextBoxFor(x => x.GNOT, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GNOT, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Date, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+

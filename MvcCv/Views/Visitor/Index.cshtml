@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Visitor
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_VisitorLayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Visitor", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @readonly = "true" })
+    @Html.ValidationMessageFor(x => x.Username, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @readonly = "true" })
+    @Html.ValidationMessageFor(x => x.Mail, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @type = "password" })
+    @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Şifre(Tekrar)")
+    @Html.TextBoxFor(x => x.RePassword, new { @class = "form-control", @type = "password" })
+    @Html.ValidationMessageFor(x => x.RePassword, null, new { @class = "text-danger" })
+    <br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+}
+

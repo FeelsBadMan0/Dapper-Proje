@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Interest
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Hobi Güncelle</h2>
+
+@using (Html.BeginForm("Update", "Interest", FormMethod.Post))
+{
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control",disabled="true" })
+    @Html.ValidationMessageFor(x => x.ID, null, new { @class = "text-danger" })
+    <br />
+    @Html.Label("Hobi")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}
+
